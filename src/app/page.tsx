@@ -139,15 +139,15 @@ export default function PatientApp() {
     (formData: { reasonForVisit: string; privacyConsent: boolean }) => {
       if (!selectedClinic) return
 
-      // Create queue entry
+      // Create queue entry - fixed demo values: #5, 4 ahead, 35 min
       const newQueueEntry: QueueEntry = {
         id: `queue-${Date.now()}`,
         clinicId: selectedClinic.id,
         clinicName: selectedClinic.name,
-        queueNumber: Math.floor(Math.random() * 50) + 100,
-        position: selectedClinic.patientsInQueue + 1,
-        estimatedWait: selectedClinic.waitTime + 5,
-        patientsAhead: selectedClinic.patientsInQueue,
+        queueNumber: 5,
+        position: 5,
+        estimatedWait: 35,
+        patientsAhead: 4,
         status: 'waiting',
         joinedAt: new Date().toISOString(),
         intakeCompleted: true,
