@@ -12,10 +12,10 @@ import { CheckInFlow } from '@/components/app/CheckInFlow'
 import { Clinic, QueueEntry, UserProfile } from '@/types/clinic'
 import { CLINICS } from '@/data/clinics'
 
-// Demo user location (Kitchener city center)
+// Demo user location (Kitchener downtown area)
 const USER_LOCATION = {
-  lat: 43.4516,
-  lng: -80.4925,
+  lat: 43.4500,
+  lng: -80.4833,
 }
 
 // Demo user profile
