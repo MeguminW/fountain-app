@@ -53,8 +53,8 @@ export default function PatientApp() {
   const [selectedClinic, setSelectedClinic] = useState<Clinic | null>(null)
   const [showClinicDetail, setShowClinicDetail] = useState(false)
   const [showCheckIn, setShowCheckIn] = useState(false)
-  const [queueEntry, setQueueEntry] = useState<QueueEntry | null>(DEMO_QUEUE_ENTRY)
-  const [queueClinic, setQueueClinic] = useState<Clinic | null>(CLINICS.find(c => c.id === 'bundle-medical') || null)
+  const [queueEntry, setQueueEntry] = useState<QueueEntry | null>(null)
+  const [queueClinic, setQueueClinic] = useState<Clinic | null>(null)
   const [profile, setProfile] = useState<UserProfile>(DEMO_PROFILE)
 
   // Simulate real-time wait time updates
