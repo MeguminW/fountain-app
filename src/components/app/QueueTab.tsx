@@ -171,7 +171,7 @@ export function QueueTab({
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.2, type: 'spring' }}
             >
-              {queueEntry.queueNumber}
+              #{queueEntry.queueNumber}
             </motion.div>
           </div>
 

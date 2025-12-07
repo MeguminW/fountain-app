@@ -48,7 +48,7 @@ const DEMO_QUEUE_ENTRY: QueueEntry = {
 }
 
 export default function PatientApp() {
-  const [activeTab, setActiveTab] = useState<TabType>('queue')
+  const [activeTab, setActiveTab] = useState<TabType>('home')
   const [clinics, setClinics] = useState<Clinic[]>(CLINICS)
   const [selectedClinic, setSelectedClinic] = useState<Clinic | null>(null)
   const [showClinicDetail, setShowClinicDetail] = useState(false)
