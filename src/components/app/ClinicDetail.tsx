@@ -52,7 +52,7 @@ export function ClinicDetail({
 
   return (
     <motion.div
-      className="fixed inset-0 z-50 bg-neutral-50 flex flex-col max-w-[430px] mx-auto"
+      className="fixed inset-0 z-[1100] bg-neutral-50 flex flex-col max-w-[430px] mx-auto"
       initial={{ x: '100%' }}
       animate={{ x: 0 }}
       exit={{ x: '100%' }}
