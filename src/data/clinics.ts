@@ -352,10 +352,10 @@ export const CLINICS: Clinic[] = [
   },
 ]
 
-// Default user location (Kitchener, ON)
+// Default user location (Kitchener, ON - Downtown area)
 export const DEFAULT_LOCATION = {
-  latitude: 43.4516,
-  longitude: -80.4925,
+  latitude: 43.4500,
+  longitude: -80.4833,
   city: 'Kitchener, ON',
 }
 

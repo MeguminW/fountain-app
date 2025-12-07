@@ -31,20 +31,20 @@ export function maskPhone(phone: string): string {
  * Get wait time color based on minutes
  */
 export function getWaitTimeColor(minutes: number): string {
-  if (minutes < 15) return 'text-success'
-  if (minutes < 30) return 'text-warning'
-  if (minutes < 60) return 'text-orange'
-  return 'text-error'
+  if (minutes < 15) return 'text-emerald-600'
+  if (minutes < 30) return 'text-amber-600'
+  if (minutes < 60) return 'text-orange-600'
+  return 'text-red-600'
 }
 
 /**
  * Get wait time background color based on minutes
  */
 export function getWaitTimeBgColor(minutes: number): string {
-  if (minutes < 15) return 'bg-success-light'
-  if (minutes < 30) return 'bg-warning-light'
+  if (minutes < 15) return 'bg-emerald-50'
+  if (minutes < 30) return 'bg-amber-50'
   if (minutes < 60) return 'bg-orange-50'
-  return 'bg-error-light'
+  return 'bg-red-50'
 }
 
 /**

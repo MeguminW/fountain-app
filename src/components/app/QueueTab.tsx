@@ -73,9 +73,13 @@ export function QueueTab({
     )
   }
 
-  // Calculate progress percentage
-  const totalInQueue = queueEntry.position + queueEntry.patientsAhead
-  const progressPercentage = Math.min(100, ((totalInQueue - queueEntry.patientsAhead) / totalInQueue) * 100)
+  // Calculate progress percentage (how close to being seen)
+  // If queueNumber is 5 and patientsAhead is 4, user started at position 5
+  // Progress = (startPosition - patientsAhead) / startPosition * 100
+  const startPosition = queueEntry.queueNumber
+  const progressPercentage = startPosition > 0
+    ? Math.min(100, ((startPosition - queueEntry.patientsAhead) / startPosition) * 100)
+    : 0
 
   // Status configuration
   const getStatusConfig = () => {

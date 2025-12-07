@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="800" height="200" xmlns="http://www.w3.org/2000/svg">
-  <text x="50" y="130" font-family="Times New Roman" font-size="96" fill="black">FOUNTAIN</text>
+<svg width="180" height="32" viewBox="0 0 180 32" xmlns="http://www.w3.org/2000/svg">
+  <text x="90" y="24" text-anchor="middle" font-family="'Times New Roman', Times, Georgia, serif" font-size="28" font-weight="400" fill="#374151" letter-spacing="0.05em">FOUNTAIN</text>
 </svg>

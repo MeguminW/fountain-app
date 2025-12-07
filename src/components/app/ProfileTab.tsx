@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import {
   User,
@@ -13,8 +12,6 @@ import {
   ChevronRight,
   Clock,
   LogOut,
-  Shield,
-  Settings,
 } from 'lucide-react'
 import { UserProfile } from '@/types/clinic'
 import { cn } from '@/lib/utils'
@@ -34,7 +31,6 @@ export function ProfileTab({
   onToggleNotifications,
   onChangeLanguage,
 }: ProfileTabProps) {
-  const [showDemoNotice, setShowDemoNotice] = useState(true)
 
   const healthItems = [
     {
@@ -145,36 +141,6 @@ export function ProfileTab({
       </motion.header>
 
       <div className="px-5 py-5 space-y-5">
-        {/* Demo Notice */}
-        {showDemoNotice && (
-          <motion.div
-            className="bg-blue-50 rounded-2xl p-4 border border-blue-100"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-          >
-            <div className="flex items-start justify-between gap-3">
-              <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-xl bg-blue-100 flex items-center justify-center flex-shrink-0">
-                  <Shield className="w-4 h-4 text-blue-600" />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-blue-900">Demo Mode</p>
-                  <p className="text-xs text-blue-700 mt-0.5 leading-relaxed">
-                    Your data is saved locally only and won't be shared.
-                  </p>
-                </div>
-              </div>
-              <button
-                onClick={() => setShowDemoNotice(false)}
-                className="text-blue-600 hover:text-blue-800 text-xs font-semibold"
-              >
-                Dismiss
-              </button>
-            </div>
-          </motion.div>
-        )}
-
         {/* Health Information Section */}
         <motion.section
           initial={{ opacity: 0, y: 10 }}

@@ -4,7 +4,7 @@ import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Search, MapPin, X, Clock, Users } from 'lucide-react'
 import { Clinic } from '@/types/clinic'
-import { cn, formatDistance, getWaitTimeColor, getWaitTimeLabel } from '@/lib/utils'
+import { cn, formatDistance } from '@/lib/utils'
 
 interface HomeTabProps {
   clinics: Clinic[]
@@ -79,33 +79,33 @@ export function HomeTab({
   return (
     <div className="flex flex-col min-h-screen bg-neutral-50">
       {/* Premium Header */}
-      <header className="sticky top-0 z-40 bg-neutral-100/80 backdrop-blur-xl">
+      <header className="sticky top-0 z-40 bg-neutral-100">
         {/* Centered Brand & Location */}
-        <div className="px-5 pt-6 pb-4">
-          <div className="text-center">
+        <div className="px-5 pt-5 pb-3">
+          <div className="flex flex-col items-center justify-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/Fountain_WordLogo.svg"
               alt="FOUNTAIN"
-              className="h-7 mx-auto mb-2"
+              className="h-6 mx-auto mb-1"
             />
-            <div className="flex items-center justify-center gap-1.5 text-sm text-neutral-500">
-              <MapPin className="w-3.5 h-3.5" />
+            <div className="flex items-center justify-center gap-1 text-xs text-neutral-500">
+              <MapPin className="w-3 h-3" />
               <span className="font-medium">Kitchener, ON</span>
             </div>
           </div>
         </div>
 
-        {/* Search Bar - Premium Style */}
-        <div className="px-5 pb-4">
+        {/* Search Bar */}
+        <div className="px-5 pb-3">
           <div className="relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4.5 h-4.5 text-neutral-400" />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400" />
             <input
               type="text"
               placeholder="Search clinics..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full h-12 pl-11 pr-11 bg-neutral-100 rounded-2xl text-[15px] font-medium text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-900/10 focus:bg-white transition-all duration-200"
+              className="w-full h-11 pl-11 pr-11 bg-white rounded-xl text-sm font-medium text-neutral-900 placeholder:text-neutral-400 border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-neutral-900/10 focus:border-neutral-300 transition-all"
             />
             <AnimatePresence>
               {searchQuery && (
@@ -203,9 +203,6 @@ function ClinicCardPremium({
   onCheckIn: (clinic: Clinic) => void
   onDirections: (clinic: Clinic) => void
 }) {
-  const waitColor = getWaitTimeColor(clinic.waitTime)
-  const waitLabel = getWaitTimeLabel(clinic.waitTime)
-
   return (
     <motion.div
       className={cn(
