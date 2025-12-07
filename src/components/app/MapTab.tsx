@@ -289,13 +289,19 @@ export function MapTab({ clinics, userLocation, onSelectClinic, onCheckIn }: Map
                 {/* Action Buttons */}
                 <div className="flex gap-2">
                   <button
-                    onClick={() => onSelectClinic(selectedClinic)}
+                    onClick={() => {
+                      onSelectClinic(selectedClinic)
+                      setSelectedClinic(null) // Clear map selection when opening detail
+                    }}
                     className="flex-1 h-12 flex items-center justify-center gap-2 bg-neutral-100 hover:bg-neutral-200 rounded-xl text-sm font-semibold text-neutral-700 transition-colors active:scale-[0.98]"
                   >
                     View Details
                   </button>
                   <button
-                    onClick={() => onCheckIn(selectedClinic)}
+                    onClick={() => {
+                      onCheckIn(selectedClinic)
+                      setSelectedClinic(null) // Clear map selection when checking in
+                    }}
                     disabled={!selectedClinic.isOpen}
                     className={cn(
                       'flex-1 h-12 flex items-center justify-center rounded-xl text-sm font-semibold transition-all active:scale-[0.98]',
