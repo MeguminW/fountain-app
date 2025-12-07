@@ -107,16 +107,19 @@ export default function PatientApp() {
     return () => clearInterval(interval)
   }, [queueEntry])
 
-  // Navigate to queue tab when user has active queue
+  // Track if user just checked in (to auto-switch to queue tab only once)
+  const [justCheckedIn, setJustCheckedIn] = useState(false)
+
+  // Navigate to queue tab only after user just checked in
   useEffect(() => {
-    if (queueEntry && activeTab === 'home') {
-      // Small delay to let the check-in animation finish
+    if (justCheckedIn && queueEntry) {
       const timer = setTimeout(() => {
         setActiveTab('queue')
+        setJustCheckedIn(false)
       }, 500)
       return () => clearTimeout(timer)
     }
-  }, [queueEntry, activeTab])
+  }, [justCheckedIn, queueEntry])
 
   // Handle clinic selection
   const handleSelectClinic = useCallback((clinic: Clinic) => {
@@ -155,6 +158,7 @@ export default function PatientApp() {
       setQueueClinic(selectedClinic)
       setShowCheckIn(false)
       setSelectedClinic(null)
+      setJustCheckedIn(true)
     },
     [selectedClinic]
   )
